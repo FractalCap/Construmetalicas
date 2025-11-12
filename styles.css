@@ -1,0 +1,268 @@
+/* =========================================================
+   Construmetálicas — Estilo profesional con animaciones modernas
+   ========================================================= */
+
+/* ---------------- Design Tokens ---------------- */
+:root{
+  --bg: #f8f8f8;
+  --bg-elev: #ffffff;
+  --bg-alt: #f2f2f2;
+  --line: #e1e1e1;
+  --fg: #0a0a0a;
+  --muted: #444;
+
+  --black: #0a0a0a;
+  --gray-dark: #1c1c1c;
+  --gray-mid: #2a2a2a;
+
+  --font: system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial,sans-serif;
+  --fs-hero: clamp(38px, 6.8vw, 68px);
+  --fs-h2: clamp(25px, 3.7vw, 36px);
+  --fs-lead: clamp(15px, 2.2vw, 20px);
+
+  --r-lg: 16px;
+  --r-md: 12px;
+  --shadow-1: 0 10px 30px rgba(0,0,0,.08);
+  --shadow-2: 0 20px 50px rgba(0,0,0,.12);
+  --t-fast: .18s ease;
+  --t-slow: .36s cubic-bezier(.2,.6,.2,1);
+}
+
+/* ---------------- Base ---------------- */
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;background:var(--bg);color:var(--fg);
+  font:400 16px/1.65 var(--font);
+  -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;
+}
+p{margin:0 0 .8rem}
+a{color:inherit;text-decoration:none}
+a:hover{opacity:.85}
+
+.container{max-width:1180px;margin:0 auto;padding:0 20px}
+.section{padding:84px 0;position:relative;overflow:hidden}
+.section__header{text-align:center;max-width:840px;margin:0 auto 34px}
+.section__header h2{font-size:var(--fs-h2);margin:0 0 8px;letter-spacing:-.01em}
+.section__header p{color:var(--muted);margin:0}
+
+/* CTA genérico centrado para todas las secciones */
+.cta-center{margin-top:26px;text-align:center}
+
+/* ---------------- Navbar ---------------- */
+.nav{
+  position:sticky;top:0;z-index:80;display:flex;align-items:center;gap:18px;
+  padding:14px 20px;background:rgba(255,255,255,.75);
+  backdrop-filter:saturate(160%) blur(12px);
+  border-bottom:1px solid var(--line);
+  box-shadow:var(--shadow-1);
+}
+.nav nav{margin-left:auto;display:flex;gap:18px;flex-wrap:wrap}
+.nav nav a{padding:6px 10px;border-radius:8px;transition:background var(--t-fast)}
+.nav nav a:hover{background:#eaeaea}
+
+/* ---------------- Hero ---------------- */
+.hero{position:relative;display:grid;place-items:center;padding:64px 20px}
+.hero--tall{min-height:92vh}
+.hero__content{text-align:center;max-width:1080px;z-index:2;position:relative}
+.hero h1{font-size:var(--fs-hero);margin:0 0 12px;letter-spacing:-.02em}
+.hero .accent{color:#111}
+.hero__cta{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin:22px 0}
+.badges{list-style:none;padding:0;margin:14px 0;display:flex;gap:14px;justify-content:center;flex-wrap:wrap;color:#444}
+
+/* Fondo animado */
+.hero__bg{position:absolute;inset:0;overflow:hidden;z-index:1}
+.hero__bg .bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transform:scale(1.05);animation:fadeSlide 24s infinite}
+.hero__bg .bg-2{animation-delay:6s}
+.hero__bg .bg-3{animation-delay:12s}
+.hero__bg .bg-4{animation-delay:18s}
+@keyframes fadeSlide{
+  0%{opacity:0;transform:scale(1.05)}
+  5%{opacity:1}
+  23%{opacity:1}
+  25%{opacity:0}
+  100%{opacity:0;transform:scale(1)}
+}
+.hero__overlay{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(255,255,255,.35),rgba(255,255,255,.6))}
+
+/* ---------------- Botones ---------------- */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;
+  padding:12px 16px;border-radius:12px;border:1px solid #ccc;
+  background:#0a0a0a;color:#fff;font-weight:500;cursor:pointer;
+  transition:transform var(--t-fast),opacity var(--t-fast),background var(--t-fast);
+}
+.btn:hover{transform:translateY(-1px);opacity:.9}
+.btn-primary{background:#000;color:#fff}
+.btn-secondary{background:#fff;color:#000;border-color:#aaa}
+.btn-ghost{background:transparent;border:1px solid #ddd;color:#000}
+.btn-lg{padding:14px 24px;font-weight:600}
+
+/* ---------------- Servicios (blanco / texto negro) ---------------- */
+.section--services-invert{background:#fff;color:#000}
+.section--services-invert .section__header h2{color:#000}
+.section--services-invert .section__header p{color:#444}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+@media (max-width:1040px){.grid{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:640px){.grid{grid-template-columns:1fr}}
+.section--services-invert .card{
+  background:#fdfdfd;border:1px solid #e0e0e0;border-radius:var(--r-lg);padding:26px;text-align:left;
+  transition:transform var(--t-slow),box-shadow var(--t-slow);box-shadow:0 4px 20px rgba(0,0,0,.06);
+}
+.section--services-invert .card:hover{transform:translateY(-4px);box-shadow:0 10px 32px rgba(0,0,0,.12)}
+.section--services-invert .card h3{margin-top:0;color:#000;font-weight:600}
+.section--services-invert .card p{color:#333}
+.section--services-invert .btn-secondary{background:#000;color:#fff;border-color:#000;margin-top:10px}
+.section--services-invert .btn-secondary:hover{background:#222;color:#fff}
+
+/* ---------------- Sobre nosotros (oscuro) ---------------- */
+.section--about-dark{background:var(--gray-dark);color:#f9f9f9}
+.section--about-dark h2,.section--about-dark p,.section--about-dark li,.section--about-dark small{color:#fff}
+.section--about-dark .about-card{
+  background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);
+  border-radius:var(--r-lg);padding:50px 40px;text-align:center;
+  box-shadow:0 10px 40px rgba(0,0,0,.45);transition:transform var(--t-slow),box-shadow var(--t-slow);
+}
+.section--about-dark .about-card:hover{transform:translateY(-3px);box-shadow:0 20px 60px rgba(0,0,0,.6)}
+.section--about-dark .checklist{list-style:none;padding:0;margin:16px 0}
+.section--about-dark .checklist li{position:relative;padding-left:22px;text-align:left;margin:6px 0}
+.section--about-dark .checklist li::before{content:"";position:absolute;left:0;top:9px;width:8px;height:8px;border-radius:50%;background:#fff;opacity:.9}
+.section--about-dark .stats{margin-top:30px;display:flex;justify-content:center;gap:60px;flex-wrap:wrap}
+.section--about-dark .stat{font-size:46px;font-weight:700;color:#fff}
+.section--about-dark small{color:#ccc}
+
+/* ---------------- Misión / Visión — refinado premium ---------------- */
+.section--mono{background:var(--bg-alt);border-block:1px solid var(--line)}
+/* Grid y separación */
+.mv-grid{display:grid;grid-template-columns:1fr 1fr;gap:26px}
+@media(max-width:900px){.mv-grid{grid-template-columns:1fr}}
+/* Card pro */
+.mv-card{
+  position:relative;
+  background:#fff;
+  border:1px solid #e7e7e7;
+  border-radius:24px;
+  padding:28px 26px;
+  box-shadow:
+    0 1px 0 rgba(0,0,0,.02) inset,
+    0 18px 60px rgba(0,0,0,.08);
+  transition:transform var(--t-slow), box-shadow var(--t-slow), border-color var(--t-fast);
+}
+.mv-card::before{
+  /* borde interior sutil */
+  content:"";position:absolute;inset:0;border-radius:24px;
+  box-shadow:inset 0 0 0 1px rgba(0,0,0,.04);
+  pointer-events:none;
+}
+.mv-card:hover{
+  transform:translateY(-3px);
+  box-shadow:0 24px 70px rgba(0,0,0,.12);
+  border-color:#dfdfdf;
+}
+.mv-card h3{margin:4px 0 14px;letter-spacing:-.01em}
+/* Línea acento superior */
+.mv-topline{
+  height:4px;
+  background:linear-gradient(90deg,#111,#7d7d7d);
+  border-radius:4px;
+  margin:-6px 0 18px;
+  opacity:.9;
+}
+/* Bullets con mejor ritmo */
+.mv-bullets{margin:14px 0 0;padding-left:22px;color:#222}
+.mv-bullets li{margin:8px 0}
+
+/* Centrar el botón de esta sección */
+#mision-vision .cta-center{margin-top:30px;text-align:center}
+
+/* ---------------- Galería (invertida negro/blanco) ---------------- */
+.section--gallery-invert{background:#000;color:#fff;border-bottom:1px solid #111}
+.section--gallery-invert .section__header p{color:#ccc}
+
+/* ===== Antes y Después — Slider profesional ===== */
+.before-after-wrapper{position:relative;display:grid;gap:22px}
+.before-after-header{
+  display:grid;grid-template-columns:1fr 1fr;gap:22px;align-items:end;
+  text-transform:uppercase;font-weight:700;letter-spacing:.08em;color:#fff;
+}
+.before-after-header .col-title{
+  padding:10px 12px;border:1px solid #222;border-radius:12px;
+  background:linear-gradient(180deg,#0e0e0e,#0a0a0a);text-align:center;
+  box-shadow:0 8px 24px rgba(255,255,255,.06) inset, 0 10px 24px rgba(0,0,0,.5);
+}
+.before-after-row{
+  position:relative;
+  display:grid;grid-template-columns:1fr 1fr;gap:22px;align-items:start;
+}
+.before-after-row .before-block,
+.before-after-row .after-block{
+  background:#0c0c0c;border:1px solid #222;border-radius:16px;padding:12px;
+  box-shadow:0 12px 30px rgba(255,255,255,.05), 0 18px 40px rgba(0,0,0,.5);
+}
+.before-after-row img{
+  width:100%;height:360px;object-fit:cover;display:block;border-radius:12px;border:1px solid #2b2b2b;
+  box-shadow:0 10px 26px rgba(0,0,0,.45);transform:translateY(14px) scale(.985);opacity:0;
+  transition:transform .8s cubic-bezier(.2,.65,.25,1), opacity .8s ease, box-shadow .3s ease;
+}
+.before-after-row img:hover{transform:translateY(8px) scale(.992);box-shadow:0 18px 46px rgba(0,0,0,.6)}
+.reveal-img.in,.reveal.in .reveal-img{opacity:1;transform:translateY(0) scale(1)}
+
+/* Controles laterales minimalistas */
+.ba-controls{
+  position:absolute;inset:0;pointer-events:none;
+}
+.ba-arrow{
+  position:absolute;top:50%;transform:translateY(-50%);
+  width:48px;height:48px;border-radius:999px;border:1px solid rgba(255,255,255,.25);
+  background:rgba(255,255,255,.08);color:#fff;font-size:18px;line-height:1;
+  display:grid;place-items:center;backdrop-filter:blur(8px);
+  box-shadow:0 6px 20px rgba(0,0,0,.45);
+  cursor:pointer;pointer-events:auto;
+  transition:transform var(--t-fast), background var(--t-fast), opacity var(--t-fast);
+}
+.ba-arrow:hover{background:rgba(255,255,255,.14);transform:translateY(-50%) scale(1.04)}
+.ba-prev{left:-18px}
+.ba-next{right:-18px}
+.ba-arrow.is-disabled{opacity:.45;cursor:not-allowed}
+.ba-arrow.is-disabled:hover{transform:translateY(-50%);background:rgba(255,255,255,.08)}
+.ba-index{
+  position:absolute;left:50%;bottom:14px;transform:translateX(-50%);
+  background:rgba(255,255,255,.08);color:#fff;border:1px solid rgba(255,255,255,.2);
+  padding:6px 10px;border-radius:999px;font-size:12px;backdrop-filter:blur(6px);
+}
+
+/* CTA de galería (también centrado por .cta-center global) */
+/* …nada extra necesario */
+
+/* ---------------- Contacto — centrar botón ---------------- */
+#contacto .cta-center{margin-top:30px;text-align:center}
+
+/* ---------------- Footer ---------------- */
+.footer{padding:48px 0;background:#f2f2f2;border-top:1px solid var(--line)}
+.footer__grid{display:grid;grid-template-columns:2fr 1fr;gap:18px}
+@media(max-width:900px){.footer__grid{grid-template-columns:1fr}}
+.footer nav a{display:block;margin:6px 0;color:#000}
+.footer small{color:#555}
+
+/* ---------------- FAB WhatsApp ---------------- */
+.wa-fab{
+  position:fixed;right:18px;bottom:18px;z-index:100;
+  width:56px;height:56px;border-radius:50%;
+  display:grid;place-items:center;background:#000;color:#fff;border:1px solid #111;
+  box-shadow:0 10px 30px rgba(0,0,0,.4);transition:transform var(--t-fast),filter var(--t-fast)
+}
+.wa-fab:hover{transform:translateY(-2px);filter:brightness(1.15)}
+
+/* ---------------- Animaciones Reveal por sección ---------------- */
+.reveal{opacity:0;transform:translateY(20px);transition:opacity .9s ease,transform .9s ease}
+.section--services-invert .reveal{transform:translateY(40px);transition-delay:.08s}
+.section--about-dark .reveal{transform:translateX(-30px);transition-delay:.08s}
+.section--gallery-invert .reveal{transform:translateY(25px) scale(.98);transition-delay:.08s}
+#mision-vision .reveal{transform:scale(.96);transition-delay:.08s}
+.reveal.in{opacity:1;transform:none}
+
+/* ---------------- Accesibilidad ---------------- */
+:focus-visible{outline:2px dashed #aaa;outline-offset:3px}
+@media(prefers-reduced-motion:reduce){
+  *{transition:none!important;animation:none!important}
+}
