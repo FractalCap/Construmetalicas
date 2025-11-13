@@ -2,259 +2,273 @@
 <html lang="es" dir="ltr">
 <head>
   <meta charset="utf-8">
-  <title>Construmetálicas — Construcción y remodelación para tu hogar en Chile</title>
+  <title>Construmetálicas — Construcción y remodelación en obra civil en Chile</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Construmetálicas: construcción y remodelación para tu hogar en Chile. Terminaciones profesionales, procesos claros y coordinación directa por WhatsApp.">
-  <link rel="canonical" href="https://www.tudominio.cl/">
-  <link rel="icon" type="image/png" href="assets/favicon.png">
-  <meta property="og:title" content="Construmetálicas — Soluciones para tu hogar en Chile">
-  <meta property="og:description" content="Construcción y remodelación con enfoque en hogares. Cotiza tu proyecto por WhatsApp.">
-  <meta property="og:type" content="website">
-  <meta property="og:image" content="https://www.tudominio.cl/assets/og-image.jpg">
-  <meta name="geo.region" content="CL"><meta name="language" content="es-CL">
-  <link rel="preload" href="assets/logo.svg" as="image">
-  <link rel="preload" href="assets/hero-1.jpg" as="image">
+
+  <meta name="description" content="Construcción, remodelación y obra civil para viviendas, oficinas, locales comerciales y galpones. Terminaciones profesionales y comunicación directa por WhatsApp.">
+
+  <link rel="icon" href="assets/favicon.png">
   <link rel="stylesheet" href="styles.css">
   <script defer src="app.js"></script>
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "HomeAndConstructionBusiness",
-    "name": "Construmetálicas",
-    "image": "https://www.tudominio.cl/assets/logo.svg",
-    "url": "https://www.tudominio.cl/",
-    "telephone": "+56 9 6350 7197",
-    "address": {
-      "@type":"PostalAddress",
-      "addressLocality":"Santiago",
-      "addressRegion":"RM",
-      "postalCode":"0000000",
-      "addressCountry":"CL"
-    },
-    "areaServed": "Chile",
-    "priceRange": "$$"
-  }
-  </script>
 </head>
+
 <body>
-  <!-- Header -->
+
+  <!-- HEADER -->
   <header class="nav">
-    <a class="brand" href="#inicio" aria-label="Ir al inicio">
-      <img src="assets/logo.svg" alt="Logo Construmetálicas" width="128" height="28">
+    <a class="brand" href="#inicio">
+      <!-- LOGO PRINCIPAL ACTUALIZADO -->
+      <img src="assets/logo.jpg" width="128" alt="Construmetálicas Logo">
     </a>
 
-    <!-- Menú desktop -->
-    <nav class="nav-links" aria-label="Principal">
+    <nav class="nav-links">
       <a href="#servicios">Servicios</a>
       <a href="#sobre">Sobre</a>
-      <a href="#mision-vision">Misión y Visión</a>
+      <a href="#experiencia">Experiencia</a>
       <a href="#galeria">Antes / Después</a>
       <a href="#contacto">Contacto</a>
     </nav>
 
     <a class="btn btn-primary hide-sm" id="btn-whatsapp-nav" href="#" data-wa="Nav">WhatsApp</a>
 
-    <!-- Botón hamburguesa (visible en móvil) -->
-    <button class="nav-toggle" id="nav-toggle" aria-controls="mobile-drawer" aria-expanded="false" aria-label="Abrir menú">
+    <button id="nav-toggle" class="nav-toggle">
       <span class="nav-toggle__bar"></span>
       <span class="nav-toggle__bar"></span>
       <span class="nav-toggle__bar"></span>
     </button>
 
-    <!-- Drawer móvil -->
-    <aside class="mobile-drawer" id="mobile-drawer" role="dialog" aria-modal="true" aria-labelledby="mobile-drawer-title" tabindex="-1">
+    <aside id="mobile-drawer" class="mobile-drawer">
       <div class="mobile-drawer__header">
-        <h2 id="mobile-drawer-title">Menú</h2>
-        <button class="drawer-close" id="drawer-close" aria-label="Cerrar menú">✕</button>
+        <h2>Menú</h2>
+        <button id="drawer-close" class="drawer-close">✕</button>
       </div>
       <nav class="mobile-drawer__links">
         <a href="#servicios" data-close>Servicios</a>
         <a href="#sobre" data-close>Sobre</a>
-        <a href="#mision-vision" data-close>Misión y Visión</a>
+        <a href="#experiencia" data-close>Experiencia</a>
         <a href="#galeria" data-close>Antes / Después</a>
         <a href="#contacto" data-close>Contacto</a>
       </nav>
-      <a class="btn btn-primary btn-lg mobile-wa" id="btn-whatsapp-drawer" href="#" data-wa="Nav móvil">Escríbenos por WhatsApp</a>
     </aside>
-    <div class="scrim" id="scrim" aria-hidden="true"></div>
+
+    <div id="scrim" class="scrim"></div>
   </header>
 
-  <!-- Hero -->
-  <main id="inicio" class="hero hero--tall">
-    <div class="hero__bg" aria-hidden="true">
-      <img class="bg bg-1" src="assets/hero-1.jpg" alt="">
-      <div class="hero__overlay"></div>
+  <!-- HERO FULL SCREEN -->
+  <main id="inicio" class="hero">
+    <div class="hero-bg">
+      <img src="assets/hero-1.jpg" alt="">
+      <div class="hero-overlay"></div>
     </div>
-    <div class="hero__content reveal">
-      <p class="eyebrow">Construmetálicas · Constructora para hogares</p>
-      <h1>Construcción y remodelación<br><span class="accent">para tu hogar en Chile</span></h1>
-      <p class="lead">Diseñamos y ejecutamos proyectos residenciales con terminaciones de alto estándar, cronogramas claros y comunicación directa por WhatsApp.</p>
-      <div class="hero__cta">
-        <a class="btn btn-primary btn-lg" id="btn-whatsapp-hero" href="#" data-wa="Hero">Hablemos de tu proyecto</a>
+
+    <div class="hero-card reveal">
+      <p class="eyebrow">Construcción · Remodelación · Obra civil completa</p>
+
+      <h1 class="hero-title">
+        Construcción y remodelación en obra civil<br>
+        <span class="hero-accent">para viviendas, oficinas, locales y galpones</span>
+      </h1>
+
+      <p class="hero-lead">
+        Ejecutamos proyectos con planificación clara, terminaciones profesionales y comunicación directa por WhatsApp.
+      </p>
+
+      <div class="hero-btns">
+        <a class="btn btn-primary btn-lg" id="btn-whatsapp-hero" data-wa="Hero" href="#">Hablemos de tu proyecto</a>
         <a class="btn btn-ghost" href="#servicios">Ver servicios</a>
       </div>
-      <ul class="badges">
-        <li>✓ Presupuesto rápido y sin costo</li>
-        <li>✓ Control de calidad en obra</li>
-        <li>✓ Coordinación directa con el encargado</li>
+
+      <ul class="hero-badges">
+        <li>✓ Obras civiles completas</li>
+        <li>✓ Presupuesto rápido</li>
+        <li>✓ Comunicación permanente</li>
       </ul>
     </div>
   </main>
 
-  <!-- Antes / Después -->
-  <section id="galeria" class="section section--gallery-invert">
-    <div class="container">
-      <header class="section__header reveal">
-        <h2>Antes y después</h2>
-        <p>Ejemplos visuales del cambio que podemos generar en tu hogar. Reemplaza estas imágenes por tus propios proyectos.</p>
-      </header>
-      <div class="gallery"></div>
-      <div class="cta-center reveal">
-        <a class="btn btn-primary" id="btn-whatsapp-galeria" href="#" data-wa="Galería">Quiero un resultado así</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Servicios -->
+  <!-- SERVICIOS -->
   <section id="servicios" class="section section--services-invert">
     <div class="container">
       <header class="section__header reveal">
-        <h2>Servicios de construcción</h2>
-        <p>Soluciones pensadas para tu hogar. Selecciona un servicio y te atendemos por WhatsApp.</p>
+        <h2>Servicios de obra civil</h2>
+        <p>Soluciones pensadas para tu hogar, oficina, local comercial o galpón.</p>
       </header>
-      <div class="grid">
-        <article class="card reveal">
-          <h3>Ampliaciones</h3>
-          <p>Extiende tu vivienda con estructuras seguras, cálculo adecuado y terminaciones prolijas.</p>
-          <button class="btn btn-secondary wa-service" data-service="Ampliaciones">Cotizar</button>
+
+      <div class="services-grid">
+
+        <article class="service-card reveal">
+          <div class="service-img service-img--1"></div>
+          <div class="service-content">
+            <h3>Ampliaciones</h3>
+            <p>Ampliaciones estructurales para viviendas, oficinas y locales.</p>
+            <button class="btn btn-secondary wa-service" data-service="Ampliaciones">Cotizar</button>
+          </div>
         </article>
-        <article class="card reveal">
-          <h3>Instalación de Cerámica</h3>
-          <p>Instalación precisa para pisos y muros, nivelación correcta y cortes limpios.</p>
-          <button class="btn btn-secondary wa-service" data-service="Instalación de Cerámica">Cotizar</button>
+
+        <article class="service-card reveal">
+          <div class="service-img service-img--2"></div>
+          <div class="service-content">
+            <h3>Instalación de Cerámica</h3>
+            <p>Instalaciones precisas con cortes limpios y nivelación profesional.</p>
+            <button class="btn btn-secondary wa-service" data-service="Instalación de Cerámica">Cotizar</button>
+          </div>
         </article>
-        <article class="card reveal">
-          <h3>Porcelanato</h3>
-          <p>Acabado premium, juntas mínimas y adhesivos de alta resistencia para alto tránsito.</p>
-          <button class="btn btn-secondary wa-service" data-service="Porcelanato">Cotizar</button>
+
+        <article class="service-card reveal">
+          <div class="service-img service-img--3"></div>
+          <div class="service-content">
+            <h3>Porcelanato</h3>
+            <p>Acabado premium y adhesivos de alta resistencia.</p>
+            <button class="btn btn-secondary wa-service" data-service="Porcelanato">Cotizar</button>
+          </div>
         </article>
-        <article class="card reveal">
-          <h3>Albañilería</h3>
-          <p>Muros, radieres, enfierraduras y soluciones estructurales para proyectos nuevos o remodelaciones.</p>
-          <button class="btn btn-secondary wa-service" data-service="Albañilería">Cotizar</button>
+
+        <article class="service-card reveal">
+          <div class="service-img service-img--4"></div>
+          <div class="service-content">
+            <h3>Albañilería</h3>
+            <p>Obras estructurales, radieres, muros y enfierraduras.</p>
+            <button class="btn btn-secondary wa-service" data-service="Albañilería">Cotizar</button>
+          </div>
         </article>
-        <article class="card reveal">
-          <h3>Carpintería</h3>
-          <p>Puertas, closets, muebles y cubiertas a medida, pensadas para el uso diario.</p>
-          <button class="btn btn-secondary wa-service" data-service="Carpintería">Cotizar</button>
+
+        <article class="service-card reveal">
+          <div class="service-img service-img--5"></div>
+          <div class="service-content">
+            <h3>Carpintería</h3>
+            <p>Muebles, puertas y soluciones a medida.</p>
+            <button class="btn btn-secondary wa-service" data-service="Carpintería">Cotizar</button>
+          </div>
         </article>
-        <article class="card reveal">
-          <h3>Carpintería Metálica</h3>
-          <p>Estructuras, rejas, portones y protecciones adaptadas a tu espacio.</p>
-          <button class="btn btn-secondary wa-service" data-service="Carpintería Metálica">Cotizar</button>
+
+        <article class="service-card reveal">
+          <div class="service-img service-img--6"></div>
+          <div class="service-content">
+            <h3>Estructuras metálicas y soldaduras</h3>
+            <p>Perfiles, soldaduras, escaleras metálicas y diseños innovadores.</p>
+            <button class="btn btn-secondary wa-service" data-service="Estructuras Metálicas y Soldaduras">Cotizar</button>
+          </div>
         </article>
-        <article class="card reveal">
-          <h3>Gasfitería</h3>
-          <p>Instalaciones sanitarias y de gas con pruebas de estanqueidad y seguridad.</p>
-          <button class="btn btn-secondary wa-service" data-service="Gasfitería">Cotizar</button>
+
+        <article class="service-card reveal">
+          <div class="service-img service-img--7"></div>
+          <div class="service-content">
+            <h3>Gasfitería</h3>
+            <p>Reparación de llaves, filtraciones, WC y calefón.</p>
+            <button class="btn btn-secondary wa-service" data-service="Gasfitería">Cotizar</button>
+          </div>
         </article>
-        <article class="card reveal">
-          <h3>Pinturas y Yesos</h3>
-          <p>Enlucidos, tabiquería, nivelación y pintura interior/exterior con acabado uniforme.</p>
-          <button class="btn btn-secondary wa-service" data-service="Pinturas y Yesos">Cotizar</button>
+
+        <article class="service-card reveal">
+          <div class="service-img service-img--8"></div>
+          <div class="service-content">
+            <h3>Pinturas y Yesos</h3>
+            <p>Pintura exterior/interior, yeso y tabiquería.</p>
+            <button class="btn btn-secondary wa-service" data-service="Pinturas y Yesos">Cotizar</button>
+          </div>
         </article>
+
       </div>
     </div>
   </section>
 
-  <!-- Sobre nosotros -->
-  <section id="sobre" class="section section--about-dark">
+  <!-- EXPERIENCIA -->
+  <section id="experiencia" class="section section--experience">
+    <div class="experience-bg"><div class="experience-overlay"></div></div>
+    <div class="container">
+      <div class="experience-content reveal">
+        <h2>Amplia experiencia en obra civil</h2>
+        <p class="exp-lead">Nuestro compromiso es entregar calidad, seguridad y resultados que superen tus expectativas.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALERÍA -->
+  <section id="galeria" class="section section--gallery">
+    <div class="container">
+      <header class="section__header reveal">
+        <h2>Antes y después</h2>
+        <p>Transformaciones reales de nuestros proyectos.</p>
+      </header>
+      <div class="gallery"></div>
+      <div class="cta-center reveal" style="text-align:center;">
+        <a class="btn btn-primary" id="btn-whatsapp-galeria" data-wa="Galería" href="#">Quiero algo así</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOBRE -->
+  <section id="sobre" class="section section--about">
     <div class="container">
       <div class="about-card reveal">
         <h2>Sobre Construmetálicas</h2>
-        <p>Somos una empresa chilena dedicada a la construcción y remodelación de viviendas. Nos enfocamos en proyectos bien planificados, prolijos y con comunicación clara desde el primer contacto.</p>
-        <p class="lead">Combinamos experiencia en obra, proveedores confiables y un acompañamiento cercano para que entiendas qué se hará, cuánto tarda y cuánto cuesta.</p>
+        <p>
+          Somos un equipo especializado en obra civil y terminaciones, orientado a proyectos
+          para viviendas, oficinas, locales comerciales y galpones. Acompañamos al cliente
+          desde la idea inicial hasta la entrega final de la obra.
+        </p>
+        <p>
+          Nos enfocamos en planificación clara, cumplimiento de plazos y una comunicación
+          transparente durante todo el proyecto, para que tengas siempre visibilidad de los avances.
+        </p>
         <ul class="checklist">
-          <li>Planificación y acompañamiento de principio a fin</li>
-          <li>Equipo profesional y herramientas certificadas</li>
-          <li>Orden, seguridad y limpieza en obra</li>
+          <li>Remodelaciones y ampliaciones a medida.</li>
+          <li>Obras estructurales en hormigón y metal.</li>
+          <li>Instalación de cerámica, porcelanato y terminaciones finas.</li>
+          <li>Diseños pensados para el uso diario y la durabilidad.</li>
+          <li>Equipo profesional y coordinación directa por WhatsApp.</li>
         </ul>
-        <div class="stats">
-          <div><span class="stat" data-count="150">0</span><small>+ proyectos ejecutados</small></div>
-          <div><span class="stat" data-count="98">0</span><small>% de clientes satisfechos</small></div>
-          <div><span class="stat" data-count="10">0</span><small>+ años de experiencia</small></div>
-        </div>
       </div>
     </div>
   </section>
 
-  <!-- Misión y Visión -->
-  <section id="mision-vision" class="section section--mono">
+  <!-- CONTACTO -->
+  <section id="contacto" class="section section--contact">
     <div class="container">
-      <header class="section__header reveal">
-        <h2>Misión y Visión</h2>
-        <p class="mono-sub">Un enfoque sobrio en blanco, gris y negro, para que lo importante sea tu proyecto.</p>
-      </header>
-      <div class="mv-grid">
-        <article class="mv-card reveal">
-          <div class="mv-topline" aria-hidden="true"></div>
-          <h3>Misión</h3>
-          <p>Ofrecer soluciones de construcción y remodelación para hogares con <strong>calidad verificable</strong>, comunicación clara y cumplimiento de plazos.</p>
-          <ul class="mv-bullets">
-            <li>Proceso ordenado y transparente</li>
-            <li>Acabados prolijos y duraderos</li>
-            <li>Acompañamiento cercano por WhatsApp</li>
-          </ul>
-        </article>
-        <article class="mv-card reveal">
-          <div class="mv-topline" aria-hidden="true"></div>
-          <h3>Visión</h3>
-          <p>Ser la <strong>constructora de referencia para hogares en Chile</strong>, reconocida por su sobriedad estética y eficiencia en obra.</p>
-          <ul class="mv-bullets">
-            <li>Excelencia operativa y seguridad</li>
-            <li>Diseño funcional y atemporal</li>
-            <li>Satisfacción y confianza sostenidas</li>
-          </ul>
-        </article>
-      </div>
-      <div class="cta-center reveal">
-        <a class="btn btn-primary btn-lg" id="btn-whatsapp-mv" href="#" data-wa="MisiónVisión">Hablemos de tu proyecto</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Contacto -->
-  <section id="contacto" class="section section--alt">
-    <div class="container">
-      <header class="section__header reveal">
+      <header class="section__header reveal" style="text-align:center;">
         <h2>Contacto</h2>
-        <p><strong>Horario:</strong> L–V 9:00–18:00 · <strong>Tel:</strong> +56 9 6350 7197</p>
+        <p><strong>Tel:</strong> +56 9 6350 7197</p>
+        <p>Cuéntanos qué tipo de proyecto necesitas (remodelación, ampliación, obra nueva, etc.) y te respondemos por WhatsApp.</p>
       </header>
-      <div class="cta-center reveal">
-        <a class="btn btn-primary" id="btn-whatsapp-contacto" href="#" data-wa="Contacto">Escríbenos por WhatsApp</a>
+      <div class="cta-center reveal" style="text-align:center;">
+        <a class="btn btn-primary btn-lg" data-wa="Contacto" id="btn-whatsapp-contacto" href="#">Hablar por WhatsApp</a>
       </div>
     </div>
   </section>
 
-  <!-- Footer -->
+  <!-- FOOTER -->
   <footer class="footer">
     <div class="container footer__grid">
       <div>
-        <img src="assets/logo.svg" alt="Logo Construmetálicas" width="120" height="26">
-        <p>Construcción y remodelación para hogares en Chile.</p>
+        <img src="assets/logo.jpg" width="120" alt="Logo">
+        <p>Construmetálicas — construcción y obra civil en Chile.</p>
+        <p><strong>Ubicación:</strong> Región Metropolitana, Chile.</p>
       </div>
-      <nav aria-label="Pie de página">
-        <a href="#servicios">Servicios</a>
-        <a href="#sobre">Sobre</a>
-        <a href="#mision-vision">Misión y Visión</a>
-        <a href="privacy-policy.html">Privacidad</a>
-        <a href="#contacto">Contacto</a>
-      </nav>
+
+      <div>
+        <h3>Enlaces</h3>
+        <nav class="footer-nav">
+          <a href="#servicios">Servicios</a><br>
+          <a href="#sobre">Sobre</a><br>
+          <a href="#experiencia">Experiencia</a><br>
+          <a href="#galeria">Antes / Después</a><br>
+          <a href="#contacto">Contacto</a><br>
+          <a href="privacy-policy.html">Política de privacidad</a>
+        </nav>
+
+        <h3>Contacto</h3>
+        <p><strong>Tel:</strong> +56 9 6350 7197</p>
+        <p><strong>WhatsApp:</strong> Escríbenos para cotizar tu proyecto.</p>
+      </div>
+
       <small>© <span id="year"></span> Construmetálicas. Todos los derechos reservados.</small>
     </div>
   </footer>
 
-  <!-- FAB WhatsApp -->
-  <a class="wa-fab" id="wa-fab" href="#" data-wa="FAB" aria-label="Abrir WhatsApp">WA</a>
+  <!-- FAB — WhatsApp con icono PNG -->
+  <a class="wa-fab" id="wa-fab" data-wa="FAB" href="#">
+    <img src="assets/whatsapp.png" alt="WhatsApp" style="width:30px;height:30px;">
+  </a>
+
 </body>
 </html>
