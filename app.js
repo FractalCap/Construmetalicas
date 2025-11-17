@@ -2,7 +2,7 @@
 // Construmetálicas — Funcionalidad JS general del sitio
 // =========================================================
 
-// Número actualizado
+// Número de WhatsApp
 const WHATSAPP_NUMBER = '56963507197';
 
 // Utils
@@ -110,7 +110,7 @@ function wireMobileMenu() {
     drawer.classList.add('open');
     scrim.classList.add('show');
     toggle.classList.add('is-open');
-    toggle.setAttribute('aria-expanded', 'true');
+    toggle.setAttribute('aria-expanded', true);
     document.body.style.overflow = 'hidden';
   }
 
@@ -118,7 +118,7 @@ function wireMobileMenu() {
     drawer.classList.remove('open');
     scrim.classList.remove('show');
     toggle.classList.remove('is-open');
-    toggle.setAttribute('aria-expanded', 'false');
+    toggle.setAttribute('aria-expanded', false);
     document.body.style.overflow = '';
   }
 
@@ -133,7 +133,6 @@ function wireMobileMenu() {
     link.addEventListener('click', closeMenu)
   );
 
-  // Cerrar con ESC
   drawer.addEventListener('keydown', e => {
     if (e.key === 'Escape') closeMenu();
   });
@@ -147,14 +146,15 @@ function setupBeforeAfterSlider() {
   const container = qs('.container', section);
   const oldGallery = qs('.gallery', container);
 
+  // 👉 SOLO 4 PROYECTOS
   const projects = [
-    { before: 'assets/gallery-1.png', after: 'assets/gallery-6.png' },
-    { before: 'assets/gallery-2.png', after: 'assets/gallery-7.png' },
-    { before: 'assets/gallery-3.png', after: 'assets/gallery-8.png' },
-    { before: 'assets/gallery-4.png', after: 'assets/gallery-9.png' },
-    { before: 'assets/gallery-5.png', after: 'assets/gallery-10.png' }
+    { before: 'proyecto1-antes.jpg', after: 'proyecto1-despues.jpg' },
+    { before: 'proyecto2-antes.jpg', after: 'proyecto2-despues.jpg' },
+    { before: 'proyecto3-antes.jpg', after: 'proyecto3-despues.jpg' },
+    { before: 'proyecto4-antes.jpg', after: 'proyecto4-despues.jpg' }
   ];
 
+  // Precarga ligera
   projects.forEach(p => {
     const a = new Image(); a.src = p.before;
     const b = new Image(); b.src = p.after;
@@ -208,7 +208,7 @@ function setupBeforeAfterSlider() {
   const nextBtn = qs('.ba-next', controls);
   const idxSpan = qs('.ba-index', controls);
 
-  function setImages(i, direction = 0) {
+  function setImages(i) {
     const p = projects[i];
 
     beforeImg.src = p.before;
@@ -226,7 +226,7 @@ function setupBeforeAfterSlider() {
     const newIndex = clamp(index + dir, 0, projects.length - 1);
     if (newIndex === index) return;
     index = newIndex;
-    setImages(index, dir);
+    setImages(index);
   }
 
   prevBtn.addEventListener('click', () => go(-1));
@@ -244,13 +244,13 @@ function setupBeforeAfterSlider() {
   setImages(index);
 }
 
-// Año en footer
+// Footer year
 function setYear() {
   const y = qs('#year');
   if (y) y.textContent = new Date().getFullYear();
 }
 
-// Acceso rápido teclado
+// Keyboard shortcuts
 function keyboardShortcuts() {
   window.addEventListener('keydown', e => {
     if (e.key.toLowerCase() === 'w') {
