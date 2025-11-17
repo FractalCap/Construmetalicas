@@ -1,18 +1,22 @@
 /* =========================================================
    Construmetálicas — Diseño responsivo (FULL FILE)
-   HERO con imágenes VERTICALES en PC y MOBILE
    ========================================================= */
 
 /* ---------- Tokens ---------- */
 :root{
-  --bg:#f8f8f8; --bg-elev:#fff; --bg-alt:#f2f2f2;
-  --line:#e6e6e6; --fg:#0a0a0a; --muted:#555;
+  --bg:#f8f8f8; 
+  --bg-elev:#fff; 
+  --bg-alt:#f2f2f2;
+  --line:#e6e6e6; 
+  --fg:#0a0a0a; 
+  --muted:#555;
 
   --yellow:#f2b632;
   --yellow-dark:#e2a02c;
 
   --font: system-ui,-apple-system,Segoe UI,Inter,Roboto,sans-serif;
-  --r-lg:18px; --r-md:12px;
+  --r-lg:18px; 
+  --r-md:12px;
 
   --shadow-1:0 10px 30px rgba(0,0,0,.08);
   --shadow-2:0 20px 50px rgba(0,0,0,.12);
@@ -20,8 +24,17 @@
 
 /* ---------- Base ---------- */
 *{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{margin:0;background:var(--bg);color:var(--fg);font:400 16px/1.6 var(--font)}
+html{
+  scroll-behavior:smooth;
+  overflow-x:hidden;
+}
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--fg);
+  font:400 16px/1.6 var(--font);
+  overflow-x:hidden;
+}
 img{max-width:100%;display:block}
 a{text-decoration:none;color:inherit}
 a:hover{opacity:.85}
@@ -29,94 +42,157 @@ a:hover{opacity:.85}
 .section{padding:70px 0;position:relative}
 
 /* =========================================================
-   HEADER (BARRA NEGRA, LOGO PEQUEÑO)
+   HEADER
    ========================================================= */
 
 .nav{
   position:sticky;top:0;z-index:200;
-  background:rgba(0,0,0,.90);
+  background:rgba(0,0,0,.92);
   backdrop-filter:blur(12px);
   border-bottom:1px solid #444;
   display:flex;align-items:center;gap:10px;
-  /* barra delgada */
   padding:5px 16px 8px 16px;
 }
 
-/* Logo pequeño */
 .brand img{
   width:80px !important;
   height:auto;
 }
 
-/* Contenedor enlaces: alineado a la derecha y con separación */
 .nav-links{
   display:none;
   margin-left:auto;
-  gap:24px;                /* separación clara entre items */
+  gap:24px;
 }
 
-/* Enlaces de la barra: blancos y con margen entre ellos para evitar “pegoteo” */
 .nav-links a{
   padding:6px 8px;
   border-radius:8px;
   color:#fff !important;
-  margin-right:4px;        /* extra separación visual */
+  margin-right:4px;
 }
-.nav-links a:last-child{
-  margin-right:0;
-}
-.nav-links a:hover{
-  background:#222;
-}
+.nav-links a:last-child{margin-right:0}
+.nav-links a:hover{background:#222}
 
-/* Botón WhatsApp del nav se mantiene como estaba */
-#btn-whatsapp-nav{
-  color:#000;
-}
+#btn-whatsapp-nav{color:#000}
 
-/* Botón hamburguesa invertido para fondo negro */
 .nav-toggle{
   margin-left:auto;width:42px;height:36px;
-  border:1px solid #666;
-  border-radius:10px;
+  border:1px solid #666;border-radius:10px;
   background:#000;
   display:flex;flex-direction:column;justify-content:center;align-items:center;gap:4px;
 }
 .nav-toggle__bar{
-  width:20px;height:2px;
-  background:#fff;
-  border-radius:2px;
+  width:20px;height:2px;background:#fff;border-radius:2px;
 }
 
-/* Drawer móvil negro */
+/* =========================================================
+   MENÚ MOBILE — FULLSCREEN OVERLAY
+   ========================================================= */
+
 .mobile-drawer{
-  position:fixed;right:0;top:0;bottom:0;width:80vw;max-width:350px;
-  background:#000;
-  border-left:1px solid #444;
-  padding:18px;
-  transform:translateX(100%);transition:.25s;z-index:300;
+  position:fixed;
+  inset:0;               /* ocupa toda la pantalla */
+  width:100vw;
+  max-width:none;
+  background:#050505;
+  background:
+    radial-gradient(circle at top,#1f1f1f 0,#050505 55%);
+  padding:18px 18px 22px;
+  transform:translateX(100%);
+  transition:transform .25s ease-out;
+  z-index:300;
+  color:#fff;
+
+  display:flex;
+  flex-direction:column;
+
+  box-shadow:0 0 0 1px rgba(255,255,255,.06),
+             0 26px 60px rgba(0,0,0,.9);
 }
 .mobile-drawer.open{transform:translateX(0)}
+
+.mobile-drawer__header{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:10px;
+  padding-bottom:10px;
+  margin-bottom:12px;
+  border-bottom:1px solid rgba(255,255,255,.22);
+}
+.mobile-drawer__header h2{
+  font-size:16px;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+  color:#fff;
+  margin:0;
+}
 .drawer-close{
-  border:1px solid #666;
+  border:1px solid #777;
   background:#000;
   color:#fff;
+  border-radius:999px;
+  width:32px;
+  height:32px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:16px;
+  cursor:pointer;
+  transition:.2s;
 }
+.drawer-close:hover{
+  background:#fff;
+  color:#000;
+}
+
+/* zona de links scrolleable */
 .mobile-drawer__links{
-  margin-top:16px;
+  margin-top:6px;
   display:flex;
   flex-direction:column;
   gap:10px;
+  flex:1;
+  overflow-y:auto;
+  padding-right:4px;
 }
 .mobile-drawer__links a{
-  padding:12px 10px;
-  border-radius:10px;
+  padding:12px 14px;
+  border-radius:14px;
+  background:rgba(0,0,0,.55);
   color:#fff !important;
+  font-size:15px;
+  border:1px solid rgba(255,255,255,.07);
+  display:flex;
+  gap:10px;
+  align-items:center;
+  box-shadow:0 10px 24px rgba(0,0,0,.55);
+}
+.mobile-drawer__links a::before{
+  content:"";
+  width:8px;height:8px;
+  border-radius:50%;
+  background:var(--yellow);
 }
 .mobile-drawer__links a:hover{
-  background:#222;
+  background:rgba(0,0,0,.85);
+  border-color:rgba(255,255,255,.25);
 }
 
+/* scrollbar sutil en móviles que lo muestren */
+.mobile-drawer__links::-webkit-scrollbar{
+  width:6px;
+}
+.mobile-drawer__links::-webkit-scrollbar-track{
+  background:transparent;
+}
+.mobile-drawer__links::-webkit-scrollbar-thumb{
+  background:rgba(255,255,255,.2);
+  border-radius:999px;
+}
+
+/* capa oscura detrás (para tablets/desktop si se usara) */
 .scrim{
   position:fixed;inset:0;background:rgba(0,0,0,.45);
   opacity:0;pointer-events:none;transition:.25s;z-index:290;
@@ -129,7 +205,7 @@ a:hover{opacity:.85}
 }
 
 /* =========================================================
-   HERO FULLSCREEN + VERTICAL IMAGES
+   HERO
    ========================================================= */
 
 .hero{
@@ -142,38 +218,25 @@ a:hover{opacity:.85}
   overflow:hidden;
 }
 
-/*** PC: 4 IMÁGENES VERTICALES EN UNA FILA ***/
 .hero-bg{
   position:absolute;inset:0;overflow:hidden;
   background-image:
-    url("assets/hero-1.jpg"),
-    url("assets/hero-2.jpg"),
-    url("assets/hero-3.jpg"),
-    url("assets/hero-4.jpg");
-
-  background-size: auto 100%, auto 100%, auto 100%, auto 100%;
+    url("hero-1.jpg"),
+    url("hero-2.jpg"),
+    url("hero-3.jpg"),
+    url("hero-4.jpg");
+  background-size:auto 100%,auto 100%,auto 100%,auto 100%;
   background-repeat:no-repeat,no-repeat,no-repeat,no-repeat;
-
-  background-position:
-    0% center,
-    33.33% center,
-    66.66% center,
-    100% center;
-  background-attachment:scroll;
+  background-position:0% center,33.33% center,66.66% center,100% center;
 }
 
 .hero-bg img{display:none}
 
 .hero-overlay{
   position:absolute;inset:0;
-  background:linear-gradient(
-    to bottom,
-    rgba(0,0,0,0.25),
-    rgba(0,0,0,0.55)
-  );
+  background:linear-gradient(to bottom,rgba(0,0,0,0.25),rgba(0,0,0,0.55));
 }
 
-/*** HERO CARD ***/
 .hero-card{
   position:relative;z-index:5;
   background:rgba(255,255,255,.92);
@@ -185,22 +248,44 @@ a:hover{opacity:.85}
   backdrop-filter:blur(4px);
 }
 
-.eyebrow{text-transform:uppercase;font-size:14px;color:var(--yellow-dark);letter-spacing:.14em;margin-bottom:10px}
-.hero-title{font-size:clamp(32px,6vw,52px);margin:0 0 12px;line-height:1.2}
-.hero-accent{color:var(--yellow-dark);font-weight:700}
-.hero-lead{max-width:600px;margin:0 auto 24px;color:#333}
+.eyebrow{
+  text-transform:uppercase;
+  font-size:14px;
+  color:#000;
+  letter-spacing:.14em;
+  margin-bottom:10px;
+}
+.hero-title{
+  font-size:clamp(32px,6vw,52px);
+  margin:0 0 12px;
+  line-height:1.2;
+}
+.hero-accent{
+  color:#000;
+  font-weight:700;
+}
+.hero-lead{
+  max-width:600px;
+  margin:0 auto 24px;
+  color:#000;
+}
 
-.hero-btns{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-bottom:16px}
-.hero-badges{display:flex;flex-wrap:wrap;justify-content:center;gap:14px;color:#555;font-size:14px;padding:0;list-style:none}
+.hero-btns{
+  display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-bottom:16px;
+}
 
-/*** MOBILE: SOLO 2 IMÁGENES VERTICALES ***/
+.hero-badges{
+  display:flex;flex-wrap:wrap;justify-content:center;gap:14px;
+  color:#000;font-size:14px;padding:0;list-style:none;
+}
+
 @media(max-width:760px){
   .hero-bg{
     background-image:
-      url("assets/hero-1.jpg"),
-      url("assets/hero-2.jpg");
-    background-size: auto 100%, auto 100%;
-    background-position: 0% center, 100% center;
+      url("hero-1.jpg"),
+      url("hero-2.jpg");
+    background-size:auto 100%,auto 100%;
+    background-position:0% center,100% center;
   }
   .hero-card{padding:32px 22px}
   .hero-title{font-size:clamp(26px,7vw,36px)}
@@ -243,21 +328,16 @@ a:hover{opacity:.85}
 }
 
 /* =========================================================
-   GALERÍA — ANTES / DESPUÉS PROFESIONAL
+   GALERÍA — ANTES / DESPUÉS
    ========================================================= */
 
 .section--gallery{
   background:#0b0b0b;
   color:#f9f9f9;
 }
-.section--gallery .section__header h2{
-  font-size:28px;
-}
-.section--gallery .section__header p{
-  color:#c7c7c7;
-}
+.section--gallery .section__header h2{font-size:28px}
+.section--gallery .section__header p{color:#c7c7c7}
 
-/* Contenedor del slider */
 .before-after-wrapper{
   position:relative;
   display:grid;
@@ -269,7 +349,6 @@ a:hover{opacity:.85}
   box-shadow:0 20px 40px rgba(0,0,0,.55);
 }
 
-/* Cabecera ANTES / DESPUÉS en desktop */
 .before-after-header{
   display:grid;
   grid-template-columns:1fr 1fr;
@@ -286,14 +365,13 @@ a:hover{opacity:.85}
   letter-spacing:.08em;
 }
 
-/* Fila de imágenes */
 .before-after-row{
   display:grid;
   grid-template-columns:1fr 1fr;
   gap:16px;
 }
 
-/* Bloques de imagen (sin etiquetas en desktop) */
+/* Contenedores */
 .before-block,
 .after-block{
   position:relative;
@@ -304,23 +382,17 @@ a:hover{opacity:.85}
   box-shadow:0 12px 30px rgba(0,0,0,.5);
 }
 
-/* Imagenes */
+/* imágenes completas */
 .before-after-row img{
-  aspect-ratio:16/10;
-  object-fit:cover;
-  border-radius:18px;
-  border:none;
   width:100%;
+  height:auto;
+  border-radius:18px;
   opacity:0;
   transform:translateY(12px);
   transition:opacity .8s ease,transform .8s ease;
 }
-.reveal-img.in{
-  opacity:1;
-  transform:none;
-}
+.reveal-img.in{opacity:1;transform:none}
 
-/* Controles del slider */
 .ba-controls{
   display:flex;
   align-items:center;
@@ -328,30 +400,17 @@ a:hover{opacity:.85}
   gap:16px;
   margin-top:4px;
 }
+.ba-index{font-size:14px;color:#d8d8d8}
 
-.ba-index{
-  font-size:14px;
-  color:#d8d8d8;
-}
-
-/* Flechas */
 .ba-arrow{
-  width:38px;
-  height:38px;
-  border-radius:999px;
+  width:38px;height:38px;border-radius:999px;
   border:1px solid rgba(255,255,255,.4);
   background:rgba(255,255,255,.06);
-  display:flex;
-  align-items:center;
-  justify-content:center;
+  display:flex;align-items:center;justify-content:center;
   cursor:pointer;
   transition:background .2s, transform .15s, border-color .2s, opacity .2s;
 }
-.ba-arrow span{
-  font-size:18px;
-  color:#fff;
-  line-height:1;
-}
+.ba-arrow span{font-size:18px;color:#fff}
 .ba-arrow:hover:not(.is-disabled){
   background:rgba(255,255,255,.16);
   transform:translateY(-1px);
@@ -363,52 +422,33 @@ a:hover{opacity:.85}
   border-color:rgba(255,255,255,.15);
 }
 
-/* MOBILE: se apila todo, se oculta cabecera y se muestran etiquetas sobre las fotos */
 @media(max-width:760px){
   .before-after-wrapper{
     padding:18px 14px 20px;
     border-radius:20px;
   }
-
-  /* Ocultamos cabecera en mobile */
-  .before-after-header{
-    display:none;
-  }
-
+  .before-after-header{display:none}
   .before-after-row{
     grid-template-columns:1fr;
     gap:14px;
   }
-
-  /* Etiquetas ANTES / DESPUÉS sólo en mobile */
   .before-block::before,
   .after-block::before{
     content:"ANTES";
     position:absolute;
-    top:8px;
-    left:8px;
+    top:8px;left:8px;
     padding:3px 8px;
     border-radius:999px;
-    font-size:10px;
-    font-weight:600;
-    letter-spacing:.1em;
-    text-transform:uppercase;
-    background:rgba(0,0,0,.7);
-    color:#fff;
+    font-size:10px;font-weight:600;
+    background:rgba(0,0,0,.7);color:#fff;
     border:1px solid rgba(255,255,255,.25);
     z-index:2;
   }
-  .after-block::before{
-    content:"DESPUÉS";
-  }
-
-  .ba-controls{
-    margin-top:6px;
-  }
+  .after-block::before{content:"DESPUÉS"}
 }
 
 /* =========================================================
-   SOBRE NOSOTROS
+   SOBRE
    ========================================================= */
 
 .section--about{
@@ -416,27 +456,35 @@ a:hover{opacity:.85}
   color:#fff;
 }
 .about-card{
-  background:rgba(255,255,255,.05);border-radius:18px;padding:32px;
-  border:1px solid rgba(255,255,255,.1);text-align:center;
+  background:rgba(255,255,255,.05);
+  border-radius:18px;
+  padding:32px;
+  border:1px solid rgba(255,255,255,.1);
+  text-align:center;
 }
 .checklist{list-style:none;margin:0;padding:0}
 .checklist li{
   position:relative;padding-left:18px;margin:8px 0;
 }
 .checklist li::before{
-  content:"";position:absolute;left:0;top:8px;width:8px;height:8px;border-radius:50%;background:#fff;
+  content:"";position:absolute;left:0;top:8px;width:8px;height:8px;
+  border-radius:50%;background:#fff;
 }
 
 /* =========================================================
    EXPERIENCIA
    ========================================================= */
 
-.section--experience{background:#111;color:#fff;position:relative}
+.section--experience{
+  background:#111;color:#fff;position:relative;
+}
 .experience-bg{
-  position:absolute;inset:0;background:url("assets/experience-bg.jpg") center/cover no-repeat;
+  position:absolute;inset:0;
+  background:url("experience-bg.jpg") center/cover no-repeat;
 }
 .experience-overlay{
-  position:absolute;inset:0;background:linear-gradient(to bottom,rgba(0,0,0,.3),rgba(0,0,0,.8));
+  position:absolute;inset:0;
+  background:linear-gradient(to bottom,rgba(0,0,0,.3),rgba(0,0,0,.8));
 }
 .experience-content{
   position:relative;z-index:5;background:rgba(0,0,0,.55);
@@ -444,7 +492,7 @@ a:hover{opacity:.85}
 }
 
 /* =========================================================
-   CONTACTO (MISMO BG QUE SOBRE CONSTRUMETÁLICAS)
+   CONTACTO
    ========================================================= */
 
 .section--contact{
@@ -453,7 +501,7 @@ a:hover{opacity:.85}
 }
 
 /* =========================================================
-   FOOTER (MISMO BG QUE SOBRE CONSTRUMETÁLICAS)
+   FOOTER
    ========================================================= */
 
 .footer{
@@ -462,26 +510,60 @@ a:hover{opacity:.85}
   border-top:1px solid #222;
   padding:40px 0;
 }
-.footer__grid{display:grid;gap:14px}
+.footer__grid{
+  display:grid;
+  gap:14px;
+}
 @media(min-width:900px){
-  .footer__grid{grid-template-columns:2fr 1fr}
+  .footer__grid{
+    grid-template-columns:2fr 1fr;
+  }
 }
 
 /* =========================================================
-   FAB
+   ⭐ FAB — SOLO LOGO WHATSAPP PNG (occupying all)
    ========================================================= */
 
 .wa-fab{
-  position:fixed;right:20px;bottom:20px;width:56px;height:56px;
-  background:var(--yellow);color:#000;
-  border-radius:50%;display:flex;align-items:center;justify-content:center;
-  box-shadow:0 12px 28px rgba(0,0,0,.38);transition:.25s;z-index:200;
+  position:fixed;
+  right:20px;
+  bottom:20px;
+
+  width:60px;
+  height:60px;
+
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  box-shadow:0 12px 28px rgba(0,0,0,.38);
+  transition:.25s;
+  z-index:200;
+
+  background:none;
 }
-.wa-fab:hover{transform:translateY(-3px)}
+
+.wa-fab img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  border-radius:50%;
+}
+
+.wa-fab:hover{
+  transform:translateY(-3px);
+}
 
 /* =========================================================
    REVEAL
    ========================================================= */
 
-.reveal{opacity:0;transform:translateY(22px);transition:.9s}
-.reveal.in{opacity:1;transform:none}
+.reveal{
+  opacity:0;
+  transform:translateY(22px);
+  transition:.9s;
+}
+.reveal.in{
+  opacity:1;
+  transform:none;
+}

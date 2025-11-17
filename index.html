@@ -7,7 +7,7 @@
 
   <meta name="description" content="Construcción, remodelación y obra civil para viviendas, oficinas, locales comerciales y galpones. Terminaciones profesionales y comunicación directa por WhatsApp.">
 
-  <link rel="icon" href="assets/favicon.png">
+  <link rel="icon" href="logo.jpg">
   <link rel="stylesheet" href="styles.css">
   <script defer src="app.js"></script>
 </head>
@@ -17,36 +17,35 @@
   <!-- HEADER -->
   <header class="nav">
     <a class="brand" href="#inicio">
-      <!-- LOGO PRINCIPAL ACTUALIZADO -->
-      <img src="assets/logo.jpg" width="128" alt="Construmetálicas Logo">
+      <img src="logo.jpg" width="128" alt="Construmetálicas Logo">
     </a>
 
     <nav class="nav-links">
       <a href="#servicios">Servicios</a>
       <a href="#sobre">Sobre</a>
       <a href="#experiencia">Experiencia</a>
-      <a href="#galeria">Antes / Después</a>
+      <a href="#galeria">Nuestros Resultados</a>
       <a href="#contacto">Contacto</a>
     </nav>
 
     <a class="btn btn-primary hide-sm" id="btn-whatsapp-nav" href="#" data-wa="Nav">WhatsApp</a>
 
-    <button id="nav-toggle" class="nav-toggle">
+    <button id="nav-toggle" class="nav-toggle" aria-label="Abrir menú">
       <span class="nav-toggle__bar"></span>
       <span class="nav-toggle__bar"></span>
       <span class="nav-toggle__bar"></span>
     </button>
 
-    <aside id="mobile-drawer" class="mobile-drawer">
+    <aside id="mobile-drawer" class="mobile-drawer" aria-hidden="true">
       <div class="mobile-drawer__header">
         <h2>Menú</h2>
-        <button id="drawer-close" class="drawer-close">✕</button>
+        <button id="drawer-close" class="drawer-close" aria-label="Cerrar menú">✕</button>
       </div>
       <nav class="mobile-drawer__links">
         <a href="#servicios" data-close>Servicios</a>
         <a href="#sobre" data-close>Sobre</a>
         <a href="#experiencia" data-close>Experiencia</a>
-        <a href="#galeria" data-close>Antes / Después</a>
+        <a href="#galeria" data-close>Nuestros Resultados</a>
         <a href="#contacto" data-close>Contacto</a>
       </nav>
     </aside>
@@ -54,23 +53,23 @@
     <div id="scrim" class="scrim"></div>
   </header>
 
-  <!-- HERO FULL SCREEN -->
+  <!-- HERO -->
   <main id="inicio" class="hero">
     <div class="hero-bg">
-      <img src="assets/hero-1.jpg" alt="">
+      <img src="hero-1.jpg" alt="">
       <div class="hero-overlay"></div>
     </div>
 
     <div class="hero-card reveal">
-      <p class="eyebrow">Construcción · Remodelación · Obra civil completa</p>
+      <p class="eyebrow">Proyectos de obra civil con terminaciones profesionales</p>
 
       <h1 class="hero-title">
-        Construcción y remodelación en obra civil<br>
-        <span class="hero-accent">para viviendas, oficinas, locales y galpones</span>
+        <span class="hero-accent">Construcción y remodelación para tu hogar en Chile</span>
       </h1>
 
       <p class="hero-lead">
-        Ejecutamos proyectos con planificación clara, terminaciones profesionales y comunicación directa por WhatsApp.
+        Ejecutamos remodelaciones, ampliaciones y obras nuevas en casas, departamentos,
+        oficinas y locales comerciales, con planificación clara y comunicación directa por WhatsApp.
       </p>
 
       <div class="hero-btns">
@@ -79,7 +78,7 @@
       </div>
 
       <ul class="hero-badges">
-        <li>✓ Obras civiles completas</li>
+        <li>✓ Soluciones para casas y departamentos</li>
         <li>✓ Presupuesto rápido</li>
         <li>✓ Comunicación permanente</li>
       </ul>
@@ -183,16 +182,19 @@
     </div>
   </section>
 
-  <!-- GALERÍA -->
+  <!-- GALERÍA / NUESTROS RESULTADOS -->
   <section id="galeria" class="section section--gallery">
     <div class="container">
       <header class="section__header reveal">
         <h2>Antes y después</h2>
         <p>Transformaciones reales de nuestros proyectos.</p>
       </header>
+
+      <!-- Aquí el JS reemplaza este div por el slider -->
       <div class="gallery"></div>
-      <div class="cta-center reveal" style="text-align:center;">
-        <a class="btn btn-primary" id="btn-whatsapp-galeria" data-wa="Galería" href="#">Quiero algo así</a>
+
+      <div class="cta-center reveal" style="text-align:center; margin-top:30px;">
+        <a class="btn btn-primary" id="btn-whatsapp-galeria" data-wa="Galería" href="#">Quiero un resultado similar</a>
       </div>
     </div>
   </section>
@@ -240,7 +242,7 @@
   <footer class="footer">
     <div class="container footer__grid">
       <div>
-        <img src="assets/logo.jpg" width="120" alt="Logo">
+        <img src="logo.jpg" width="120" alt="Logo">
         <p>Construmetálicas — construcción y obra civil en Chile.</p>
         <p><strong>Ubicación:</strong> Región Metropolitana, Chile.</p>
       </div>
@@ -251,7 +253,7 @@
           <a href="#servicios">Servicios</a><br>
           <a href="#sobre">Sobre</a><br>
           <a href="#experiencia">Experiencia</a><br>
-          <a href="#galeria">Antes / Después</a><br>
+          <a href="#galeria">Nuestros Resultados</a><br>
           <a href="#contacto">Contacto</a><br>
           <a href="privacy-policy.html">Política de privacidad</a>
         </nav>
@@ -265,9 +267,9 @@
     </div>
   </footer>
 
-  <!-- FAB — WhatsApp con icono PNG -->
+  <!-- ⭐ FAB: SOLO LOGO WHATSAPP PNG -->
   <a class="wa-fab" id="wa-fab" data-wa="FAB" href="#">
-    <img src="assets/whatsapp.png" alt="WhatsApp" style="width:30px;height:30px;">
+    <img src="whatsapp.png" alt="WhatsApp">
   </a>
 
 </body>
