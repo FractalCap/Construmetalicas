@@ -126,7 +126,7 @@ function wireMobileMenu() {
     drawer.classList.contains('open') ? closeMenu() : openMenu()
   );
 
-  close.addEventListener('click', closeMenu);
+  if (close) close.addEventListener('click', closeMenu);
   scrim.addEventListener('click', closeMenu);
 
   qsa('[data-close]', drawer).forEach(link =>
@@ -146,12 +146,10 @@ function setupBeforeAfterSlider() {
   const container = qs('.container', section);
   const oldGallery = qs('.gallery', container);
 
-  // 👉 SOLO 4 PROYECTOS
+  // 👉 SOLO 2 PROYECTOS
   const projects = [
     { before: 'proyecto1-antes.jpg', after: 'proyecto1-despues.jpg' },
-    { before: 'proyecto2-antes.jpg', after: 'proyecto2-despues.jpg' },
-    { before: 'proyecto3-antes.jpg', after: 'proyecto3-despues.jpg' },
-    { before: 'proyecto4-antes.jpg', after: 'proyecto4-despues.jpg' }
+    { before: 'proyecto2-antes.jpg', after: 'proyecto2-despues.jpg' }
   ];
 
   // Precarga ligera
